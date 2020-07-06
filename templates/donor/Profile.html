@@ -1,0 +1,50 @@
+{% extends 'donor/base.html' %}
+
+{% block content %}
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area" style="">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background="">
+            <div class="container" style="padding-top: 200px;">
+                <div class="banner_content text-center">
+                    <h2>Profile </h2>
+                    <p>Check your Profile here .....</p>
+                        <div class="container" style="width: 50%;">
+                                <form method="POST">
+                                {% csrf_token%}
+                                <div class="jumbotron" style="text-align: left;background-color: #cecec1;">
+                                    <table>
+                                        <tr>
+                                                <td class="display-5 my-4" style='text-align: left;color: black;'>Username  </td>
+                                                <td>: {{ user.username }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="display-5 my-4" style='text-align: left;color: black;'>Fullname  </td>
+                                            <td>: {{ user.get_full_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="display-5 my-4" style='text-align: left;color: black;'>Email  </td>
+                                            <td> : {{ user.email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="display-5 my-4" style='text-align: left;color: black;'>Last login </td>
+                                            <td>: {{ user.last_login }}</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td class="display-5 my-4" style='text-align: left;color: black;'>Date Joined</td>
+                                            <td>: {{ user.date_joined }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <button type="submit">Sign up</button>
+                            </form>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock content %}

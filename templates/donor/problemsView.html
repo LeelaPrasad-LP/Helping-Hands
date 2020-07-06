@@ -1,0 +1,27 @@
+{% extends 'donor/base.html' %}
+{% block content %}
+    <!--================ Start About Us Area =================-->
+    <section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="banner_content " style="padding-top: 150px;">
+                    <h4 class="btn-primary">List of Problems in your Commmunity</h4>
+                    <div class="container list-group" style="width: 50%;">
+                        {% for prob in problems %} 
+                        <br>                       
+                        <a href="{% url 'ddetail' prob.pk %}" class="list-group-item list-group-item-action">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">Title: {{ prob.Title }}</h4>
+                            <small>Author:{{prob.Author}} </small>
+                          </div>
+                          <p class="mb-1" style="color: black;">Location:{{prob.Location}}</p>
+                          <small>Organisation{{prob.Organisation}}</small>
+                        </a>
+                        {% endfor %}
+                      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!--================ End About Us Area =================-->
+{% endblock content %}

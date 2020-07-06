@@ -1,0 +1,31 @@
+{% extends 'donor/base.html' %}
+{% block content %}
+<section class="home_banner_area">
+    <div class="banner_inner">
+        <div class="container">
+            <div class="banner_content">
+                <p class="upper_text">Give a hand</p>
+                <h2>to make the better world</h2>
+                <div class="container list-group" style="width: 80%;">
+                    <br>                       
+                    <a href="" class="list-group-item list-group-item-action">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">Title: {{ prob.Title }}</h4>
+                        <small>Author:{{prob.Author}} </small>
+                      </div>
+                      <p class="mb-2" style="color: black;">Location: {{prob.Location}}</p>
+                      <p class="mb-1" style="color: black;">Upvotes: {{prob.upvotes}}</p>
+                      <p class="mb-5" style="color: black;">Description: {{prob.description}}</p>
+                      <small>Organisation :{{prob.Organisation}}</small>
+                    </a>
+                    <form action="{% url 'upvote' prob.pk %}">
+                        {%csrf_token%}
+                        <input type="submit" class="primary_btn sm-2 text-white" value="Contribute">
+                    </form>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+{% load static %}
+	<!--================ Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container"s>
+                <div class="banner_content text-center">
+					<h2>Login as...</h2>
+					<a class="primary_btn mr-20" href="{% url 'loginhome' %}">Enter as Student </a>
+					<a class="primary_btn yellow_btn text-white" href="{% url 'donorlogin' %}">Enter as Donor</a>
+				</div>
+				</div>
+            </div>
+        </div>
+    </section>
+                <!--Teams sections starts-->
+				<div class="container">
+					<h2 class="container" style="text-align: center;">OUR TEAM</h2>
+				 <div class="row teams">
+				  	<div class="col-md-4">
+					  <img src="{% static 'images/img2.jpg' %}" alt="img1" class="img-circle" width=140px height=140px>
+					  <h2>Team memeber 1</h2>
+					  <p>Description Description Description Description Description Description Description Description Description Description Description DescriptionDes</p>
+					  <a href="#" class="btn btn-lg btn-success">learn more &raquo;</a>
+				  </div>
+				  <div class="col-md-4">
+					  <img src="{% static 'images/img2.jpg' %}" alt="img1" class="img-circle center" width=140px height=140px>
+					  <h2>Team memeber 2</h2>
+					  <p>Description Description Description Description Description Description Description Description Description Description Description DescriptionDes</p>
+					  <a href="#" class="btn btn-lg btn-success">learn more &raquo;</a>
+				  </div>
+				  <div class="col-md-4">
+				   <img src="{% static 'images/img2.jpg' %}" alt="img1" class="img-circle center" width=140px height=140px>
+					  <h2>Team memeber 3</h2>
+					  <p>Description Description Description Description Description Description Description Description Description Description Description DescriptionDes</p>
+					  <a href="#" class="btn btn-lg btn-success">learn more &raquo;</a> 
+				  </div>
+			  	 </div>
+			  
+			  
+			  	</div>
+			  <hr>
+			  <hr>
+			   <!--Teams sections ends-->
+
+	<!--================ End Home Banner Area =================-->
+
+{% endblock content %}

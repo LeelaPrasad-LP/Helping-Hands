@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+	<!--================ Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="banner_content">
+                    <h3 class="btn btn-success" style="">This is a signup form</h3>
+                <div class="container" style="width: 50%;">
+                        <form method="POST">
+                        {% csrf_token%}
+                        <div class="jumbotron" style="background-color: #cecec1;">
+                            <table>
+                                {% for field in form %}
+                                <tr>{{ field.errors }}</tr>
+                                <tr>
+                                        <td class="display-5 my-4" style='text-align: left;color: black;'>{{ field.label }}</td>
+                                        <td>{{ field }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <button type="submit">Sign up</button>
+                    </form>
+                </div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!--================ End Home Banner Area =================-->
+{% endblock content %}
